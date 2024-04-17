@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Models\Post;
+use App\Models\Image;
+use App\Models\Comment;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +31,21 @@ Route::middleware('auth:sanctum')->group(function () {
         $posts = $user->posts;
 
         return $posts;
+    });
+    Route::get('/image', function (Request $request) {
+       
+        $image=Image::find(1);
+        return $image;
+    });
+    Route::get('/comment', function (Request $request) {
+       
+        $comment=Comment::find(1);
+        return $comment;
+    });
+    Route::get('/category', function (Request $request) {
+       
+        $category=Catengory::find(1);
+        return $comment;
     });
 });
 
